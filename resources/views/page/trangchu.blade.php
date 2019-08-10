@@ -58,26 +58,30 @@
 
                 <div class="col-sm-3">
                     <div class="single-item">
+                        @if($new->promotion_price!=0)
+                        <div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
+                        @endif
                         <div class="single-item-header">
-                            <a href="product.html"><img src="source/image/dienthoai/{{$new -> image}}" alt=""></a>
+                            <a href="{{route('chitietsanpham',$new->id)}}"><img src="source/image/dienthoai/{{$new -> image}}" alt="" height="250px"></a>
                         </div>
                         <div class="single-item-body">
                             <p class="single-item-title">{{ $new -> name }}</p>
-                            <p class="single-item-price">
-                                @if($new->prmotion_price)
+                            <p class="single-item-price" >
+                                @if($new->prmotion_price==0)
 
-                                    <span class ="flash-del">{{$new->unit_price}} </span>
+                                <span class ="flash-sale">{{number_format($new->unit_price)}} VND</span>
+
                                 @else
-                                    <span class ="flash-del">{{$new->unit_price}} </span>
+                                    <span class ="flash-del">{{number_format($new->unit_price)}}VND </span>
 
-                                    <span class ="flash-sale">{{$new->prmotion_price}} </span>
+                                    <span class ="flash-sale">{{number_format($new->prmotion_price)}} VND</span>
 
                                 @endif
                             </p>
                         </div>
                         <div class="single-item-caption">
-                            <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-                            <a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+                        <a class="add-to-cart pull-left" href="{{route('themgiohang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
+                            <a class="beta-btn primary" href="product.html">Chi tiết <i class="fa fa-chevron-right"></i></a>
                             <div class="clearfix"></div>
                         </div>
                     </div>
@@ -100,13 +104,13 @@
                 <div class="col-sm-3">
                     <div class="single-item">
                         <div class="single-item-header">
-                        <a href="product.html"><img src="source/image/dienthoai/{{ $spkm->image}}" alt=""></a>
+                        <a href="{{route('chitietsanpham',$spkm->id)}}"><img src="source/image/dienthoai/{{ $spkm->image}}" alt=""></a>
                         </div>
                         <div class="single-item-body">
                         <p class="single-item-title">{{$spkm->name}}</p>
                             <p class="single-item-price">
-                                <span class="flash-del">{{$spkm->unit_price}}</span>
-                                <span class="flash-sale">{{$spkm->promotion_price}}</span>
+                                <span class="flash-del">{{number_format($spkm->unit_price)}}VND</span>
+                                <span class="flash-sale">{{number_format($spkm->promotion_price)}}VND</span>
 
                             </p>
                         </div>

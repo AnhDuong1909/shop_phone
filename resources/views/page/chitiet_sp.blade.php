@@ -31,7 +31,7 @@
                             <p class="single-item-price">
                                 @if($sanpham->prmotion_price==0)
 
-                                <span class ="flash-sale">{{number_format($sanpham->unit_price)}} VND</span>
+                                <span class ="flash-del">{{number_format($sanpham->unit_price)}} VND</span>
 
                                 @else
                                     <span class ="flash-del">{{number_format($sanpham->unit_price)}}VND </span>
@@ -105,7 +105,7 @@
                                     <p class="single-item-price">
                                             @if($sptt->prmotion_price==0)
 
-                                            <span class ="flash-sale">{{number_format($sptt->unit_price)}} VND</span>
+                                            <span class ="flash-del">{{number_format($sptt->unit_price)}} VND</span>
 
                                             @else
                                                 <span class ="flash-del">{{number_format($sptt->unit_price)}}VND </span>

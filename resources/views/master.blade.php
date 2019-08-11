@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Laravel </title>
+    <title>Laravel </title>
+    <base href="{{asset('')}}">
 	<link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
@@ -13,7 +14,9 @@
 	<link rel="stylesheet" href="source/assets/dest/rs-plugin/css/responsive.css">
 	<link rel="stylesheet" title="style" href="source/assets/dest/css/style.css">
 	<link rel="stylesheet" href="source/assets/dest/css/animate.css">
-	<link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+    <link rel="stylesheet" title="style" href="source/assets/dest/css/huong-style.css">
+
+
 </head>
 <body>
 
@@ -25,7 +28,9 @@
         </div> <!-- .container -->
 
 	@include('footer')
-	<!-- include js files -->
+    <!-- include js files -->
+
+
     <script src="source/assets/dest/js/jquery.js"></script>
 	<script src="source/assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js"></script>
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>

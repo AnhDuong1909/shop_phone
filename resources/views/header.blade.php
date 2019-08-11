@@ -1,33 +1,22 @@
 <div id="header">
-    <div class="header-top">
-        <div class="container">
-            <div class="pull-right auto-width-right">
-                <ul class="top-details menu-beta l-inline">
-                    <li><a href="#"><i class="fa fa-user"></i>Tài khoản</a></li>
-                    <li><a href="#">Đăng kí</a></li>
-                    <li><a href="#">Đăng nhập</a></li>
-                </ul>
-            </div>
 
-        </div> <!-- .container -->
-    </div> <!-- .header-top -->
-    <div class="header-body">
+    <div class="header-body"  style="background-color:#CCFFFF">
         <div class="container beta-relative">
-            <div class="pull-left">
-                <a href="index.html" id="logo"><img src="source/image/is.jpg" width="600px" height="200px" alt=""></a>
+            <div class="pull-left" >
+                <a href="index.html" id="logo"><img src="source/image/logo.png" width="300px" height="100px" alt=""></a>
             </div>
-            <div class="pull-right beta-components space-left ov">
+            <div class="pull-right beta-components space-left ov" style=" float:left">
                 <div class="space10">&nbsp;</div>
-                <div class="beta-comp">
-                    <form role="search" method="get" id="searchform" action="/">
+                <div class="beta-comp" >
+                    <form role="search" method="get" id="searchform" action="/" style="width:300px; padding-top:10px; ">
                         <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
-                        <button class="fa fa-search" type="submit" id="searchsubmit"></button>
+                        <button class="fa fa-search" type="submit" id="searchsubmit" style=" padding-top:15px;"></button>
                     </form>
                 </div>
-
                 <div class="beta-comp">
                         @if(Session::has('cart '))
                     <div class="cart">
+
                         <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng(@if(Session::has('cart')) {{Session('cart')->totalQty}}@else Trống @endif) <i class="fa fa-chevron-down"></i></div>
                         <div class="beta-dropdown cart-body">
 
@@ -37,9 +26,11 @@
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="source/image/dienthoai/{{$product['item']['image']}}" alt=""></a>
                                     <div class="media-body">
+
+
                                         <span class="cart-item-title">{{$product['item']['name']}}</span>
 
-                                    <span class="cart-item-amount">{{$product['qty']}}*<span>{{$product['item']['unit_price']}}</span></span>
+                                        <span class="cart-item-amount">{{$product['qty']}}*<span>{{$product['item']['unit_price']}}</span></span>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +48,9 @@
                                 </div>
                             </div>
                         </div>
+
                     </div> <!-- .cart -->
+
                     @endif
                 </div>
             </div>
@@ -80,6 +73,10 @@
                     </li>
                 <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
                 <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
+                <li><a href="#">Đăng kí</a></li>
+                <li><a href="#">Đăng nhập</a></li>
+                <li><a href="#">Giỏ hàng</a></li>
+
                 </ul>
                 <div class="clearfix"></div>
             </nav>

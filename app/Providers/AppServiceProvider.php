@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\ProductType;
 use App\Cart;
 
-use Illuminate\Support\Facades\Session;
+use Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,13 +31,15 @@ class AppServiceProvider extends ServiceProvider
             $loai_sp=ProductType::all();
 
             $view->with('loai_sp',$loai_sp);
+
+       });
        view()->composer('header',function($view){
-        if(Sesstion('cart')){
-            $oldcart=Session::get('cart');
-            $cart =new Cart ($oldcart);
+        if(session('cart')){
+            $oldCart=Session::get('cart');
+            $cart =new Cart ($oldCart);
             $view->with(['cart'=>Session::get('cart'),'product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
         }
-       });
         });
+
     }
 }

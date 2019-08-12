@@ -50,5 +50,8 @@ class Pagecontroller extends Controller
         // return Session::get('cart');
         return redirect()->back();
      }
+     public function getMuahang(){
+        return view('page.muahang');
+     }
 
 }

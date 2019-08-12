@@ -40,3 +40,7 @@ Route::get('add-to-cart/{id}',[
     'as'=>'themgiohang',
    'uses'=>'PageController@getAddtoCart'
 ]);
+Route::get('mua-hang',[
+    'as'=>'muahang',
+   'uses'=>'PageController@getMuahang'
+]);

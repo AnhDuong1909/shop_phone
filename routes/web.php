@@ -44,3 +44,18 @@ Route::get('mua-hang',[
     'as'=>'muahang',
    'uses'=>'PageController@getMuahang'
 ]);
+
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::get('/', 'UsersController@index');
+    Route::resource('/bills', 'BillsController');
+    Route::resource('/products', 'ProductsController');
+    Route::resource('/productsType', 'ProductsTypeController');
+    Route::resource('/slides', 'SlidesController');
+    Route::resource('/customer', 'CustomerController');
+    Route::resource('/news', 'NewsController');
+    Route::resource('/users','UsersController');
+});

@@ -44,6 +44,7 @@ Route::get('mua-hang',[
     'as'=>'muahang',
    'uses'=>'PageController@getMuahang'
 ]);
+<<<<<<< HEAD
 Route::get('dang-nhap',[
     'as'=>'dangnhap',
    'uses'=>'PageController@getlogin'
@@ -52,3 +53,20 @@ Route::get('dang-ki',[
     'as'=>'dangki',
    'uses'=>'PageController@getsigup'
 ]);
+=======
+
+
+
+
+Route::group(['prefix' => 'admin'], function () {
+
+    Route::get('/', 'UsersController@index');
+    Route::resource('/bills', 'BillsController');
+    Route::resource('/products', 'ProductsController');
+    Route::resource('/productsType', 'ProductsTypeController');
+    Route::resource('/slides', 'SlidesController');
+    Route::resource('/customer', 'CustomerController');
+    Route::resource('/news', 'NewsController');
+    Route::resource('/users','UsersController');
+});
+>>>>>>> a8d19f2ce924b8594ce231abaf88ab0b7d7819ce

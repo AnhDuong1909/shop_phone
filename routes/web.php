@@ -44,3 +44,11 @@ Route::get('mua-hang',[
     'as'=>'muahang',
    'uses'=>'PageController@getMuahang'
 ]);
+Route::get('dang-nhap',[
+    'as'=>'dangnhap',
+   'uses'=>'PageController@getlogin'
+]);
+Route::get('dang-ki',[
+    'as'=>'dangki',
+   'uses'=>'PageController@getsigup'
+]);

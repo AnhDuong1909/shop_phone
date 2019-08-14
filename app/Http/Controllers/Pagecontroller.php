@@ -53,5 +53,11 @@ class Pagecontroller extends Controller
      public function getMuahang(){
         return view('page.muahang');
      }
+    public function getlogin(){
+        return view('page.dangnhap');
+     }
+     public function getsigup(){
+        return view('page.dangki');
+     }
 
 }

@@ -18,38 +18,33 @@
             <div><b> id </b>= {{ $id }}</div>
             <div><b> role </b> = {{ $l->role }}</div>
             <br><br>
-            <div class="box-body">           
+            <div class="box-body">
                     <div class="form-group">
-                      <label >username</label>
-                      <input type="text" class="form-control" value="{{ $l->username }}" name="username" readonly>
+                      <label >name</label>
+                      <input type="text" class="form-control" value="{{ $l->name }}" name="name" readonly>
                     </div>
-            
+
                     <div class="form-group">
                         <label >password</label>
                         <input type="password" class="form-control" value="{{ $l->password }}" name="password" readonly>
                     </div>
-            
-                    <div class="form-group">
-                        <label >full_name</label>
-                        <input type="text" class="form-control" value="{{ $l->full_name }}" name="full_name">
-                      </div>
-            
+
                     <div class="form-group">
                         <label >email</label>
                         <input type="email" class="form-control" value="{{ $l->email }}" name="email" readonly>
                     </div>
-            
+
                     <div class="form-group">
                         <label >phone</label>
                         <input type="tel" class="form-control" value="{{ $l->phone }}" name="phone">
                         {{-- pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" --}}
                     </div>
-            
+
                     <div class="form-group">
                         <label >address</label>
                         <input type="text" class="form-control" value="{{ $l->address }}" name="address">
                     </div>
-            
+
                     <div class="form-group">
                         <label >remember_token</label>
                         <input type="text" class="form-control" value="{{ $l->remember_token }}" name="remember_token" readonly>

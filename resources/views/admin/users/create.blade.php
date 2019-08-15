@@ -19,8 +19,8 @@
         <br>
 
         <div class="form-group">
-          <label >username</label>
-          <input type="text" class="form-control" placeholder="username" name="username">
+          <label >name</label>
+          <input type="text" class="form-control" placeholder="name" name="username">
         </div>
 
         <div class="form-group">
@@ -28,10 +28,6 @@
             <input type="password" class="form-control" placeholder="password" name="password">
         </div>
 
-        <div class="form-group">
-            <label >full_name</label>
-            <input type="text" class="form-control" placeholder="full_name" name="full_name">
-          </div>
 
         <div class="form-group">
             <label >email</label>

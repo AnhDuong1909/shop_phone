@@ -3,7 +3,7 @@
     <div class="header-body"  style="background-color:#CCFFFF">
         <div class="container beta-relative">
             <div class="pull-left" >
-                <a href="index.html" id="logo"><img src="source/image/logo.png" width="300px" height="100px" alt=""></a>
+                <a href="{{ route('trangchu') }}" id="logo"><img src="source/image/logo.png" width="300px" height="100px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov" style=" float:left">
                 <div class="space10">&nbsp;</div>
@@ -73,8 +73,39 @@
                     </li>
                 <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
                 <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
-                <li><a href="#">Đăng kí</a></li>
-                <li><a href="#">Đăng nhập</a></li>
+
+                {{-- ---------try------- --}}
+                    <!-- Authentication Links -->
+                    @guest
+                        <li><a href="{{ route('register') }}">Đăng kí</a></li>
+                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{-- -------------------- ẩn đăng ký , đăng nhập nếu đã có -------------------------------- --}}
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+                            <ul class="sub-menu"> 
+                                <li>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                                </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{-- <form id="logout-form" action="{{ route('bills.index') }}" method="get" style="display: none;"> --}}
+                                        @csrf
+                                    </form>
+                            </ul>
+                        </li>
+                    @endguest
+                {{-- ------end try---------- --}}
+ 
+                {{-- ------------ đăng ký, đăng nhập -------------------------------------------------------------------------------------------------------------------------- --}}
+                {{-- <li><a href="{{ route('register') }}">Đăng kí</a></li>
+                <li><a href="{{ route('login') }}">Đăng nhập</a></li> --}}
+                {{-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
                 <li><a href="#">Giỏ hàng</a></li>
 
                 </ul>

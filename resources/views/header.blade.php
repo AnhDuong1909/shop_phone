@@ -8,16 +8,17 @@
             <div class="pull-right beta-components space-left ov" style=" float:left">
                 <div class="space10">&nbsp;</div>
                 <div class="beta-comp" >
-                    <form role="search" method="get" id="searchform" action="/" style="width:300px; padding-top:10px; ">
-                        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." />
+                    <form role="search" method="get" id="searchform" action="/" style="width:300px; padding-top:10px;">
+                        <input type="text" value="" name="s" id="s" placeholder="Nhập từ khóa..." style="background-color:#FFFFCC;" />
                         <button class="fa fa-search" type="submit" id="searchsubmit" style=" padding-top:15px;"></button>
                     </form>
                 </div>
                 <div class="beta-comp">
                         @if(Session::has('cart'))
-                                    <div class="cart">
 
-                                        <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng(@if(Session::has('cart')) {{Session('cart')->totalQty}}@else Trống @endif) <i class="fa fa-chevron-down"></i></div>
+                                    <div class="cart" style="margin:10px;background-color:#FFFFCC; ">
+
+                                        <div class="beta-select" style=""><i class="fa fa-shopping-cart"></i> Giỏ hàng(@if(Session::has('cart')) {{Session('cart')->totalQty}}@else Trống @endif) <i class="fa fa-chevron-down"></i></div>
                                         <div class="beta-dropdown cart-body">
 
 

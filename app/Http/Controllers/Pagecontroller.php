@@ -45,7 +45,7 @@ class Pagecontroller extends Controller
          $product=Product::find($id);//tìm xem sản phẩm có id hay không
          $oldCart = Session('cart')?Session::get('cart'):null;//ktra xem session có sp chưa
          $cart = new Cart($oldCart);//tạo gio mới
-        $cart -> add ($product , $product->id);//add vào giỏ cũ nữa
+        $cart -> add ($product , $id);//add vào giỏ cũ nữa
         $req->session()->put('cart',$cart);
         // return Session::get('cart');
         return redirect()->back();

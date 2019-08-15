@@ -34,10 +34,11 @@ class AppServiceProvider extends ServiceProvider
 
        });
        view()->composer('header',function($view){
-        if(session('cart')){
-            $oldCart=Session::get('cart');
-            $cart =new Cart ($oldCart);
+        if(Session('cart')){
+            $oldCart=Session::get('cart');//lấy giỏ hàng cũ
+            $cart =new Cart ($oldCart);//tạo giỏ hàng mới gsn vào giỏ hàng cũ
             $view->with(['cart'=>Session::get('cart'),'product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+            //sản phaảm đagn ở trong giỏ
         }
         });
 

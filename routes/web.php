@@ -49,6 +49,7 @@ Route::get('mua-hang',[
 
 
 
+
 Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/', 'UsersController@index');
@@ -62,6 +63,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
+
 //facebook -------------
 Route::get('login/facebook', 'Auth\LoginController@f_redirectToProvider')->name('login.facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@f_handleProviderCallback')->name('login.facebook.callback');
@@ -72,6 +74,7 @@ Route::get('login/google/callback', 'Auth\LoginController@g_handleProviderCallba
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 

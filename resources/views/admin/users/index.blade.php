@@ -17,9 +17,8 @@
         <tr>
           <th>id</th>
           <th>role</th>
-          <th>username</th>
+          <th>name</th>
           <th>password</th>
-          <th>full_name</th>
           <th>email</th>
           <th>phone</th>
           <th>address</th>
@@ -33,9 +32,8 @@
         <tr>
           <td>{{$r->id}}</td>
           <td>{{$r->role}}</td>
-          <td>{{$r->username}}</td>
+          <td>{{$r->name}}</td>
           <td>{{ $r->password }}</td>
-          <td>{{$r->full_name}}</td>
           <td>{{$r->email}}</td>
           <td>{{$r->phone}}</td>
           <td>{{$r->address}}</td>

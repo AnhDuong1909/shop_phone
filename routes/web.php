@@ -45,14 +45,6 @@ Route::get('mua-hang',[
    'uses'=>'PageController@getMuahang'
 ]);
 
-Route::get('dang-nhap',[
-    'as'=>'dangnhap',
-   'uses'=>'PageController@getlogin'
-]);
-Route::get('dang-ki',[
-    'as'=>'dangki',
-   'uses'=>'PageController@getsigup'
-]);
 
 
 
@@ -69,4 +61,20 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/news', 'NewsController');
     Route::resource('/users','UsersController');
 });
+
+
+
+//facebook -------------
+Route::get('login/facebook', 'Auth\LoginController@f_redirectToProvider')->name('login.facebook');
+Route::get('login/facebook/callback', 'Auth\LoginController@f_handleProviderCallback')->name('login.facebook.callback');
+//google--------------
+Route::get('login/google', 'Auth\LoginController@g_redirectToProvider')->name('login.google');
+Route::get('login/google/callback', 'Auth\LoginController@g_handleProviderCallback')->name('login.google.callback');
+//---------------------
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
 

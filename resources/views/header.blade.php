@@ -106,12 +106,6 @@
                 {{-- <li><a href="{{ route('register') }}">Đăng kí</a></li>
                 <li><a href="{{ route('login') }}">Đăng nhập</a></li> --}}
                 {{-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
-
-
-                <li style="width:150px;"><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
-                <li style="width:150px;"><a href="{{route('lienhe')}}">Liên hệ</a></li>
-                <li style="width:150px;"><a href="{{route('dangki')}}">Đăng kí</a></li>
-                <li style="width:150px;"><a href="{{route('dangnhap')}}">Đăng nhập</a></li>
                 <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
 
                 </ul>

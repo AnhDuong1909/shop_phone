@@ -14,43 +14,42 @@
                     </form>
                 </div>
                 <div class="beta-comp">
-                        @if(Session::has('cart '))
-                    <div class="cart">
+                        @if(Session::has('cart'))
+                                    <div class="cart">
 
-                        <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng(@if(Session::has('cart')) {{Session('cart')->totalQty}}@else Trống @endif) <i class="fa fa-chevron-down"></i></div>
-                        <div class="beta-dropdown cart-body">
-
-
-                            @foreach($product_cart as $product)
-                            <div class="cart-item">
-                                <div class="media">
-                                    <a class="pull-left" href="#"><img src="source/image/dienthoai/{{$product['item']['image']}}" alt=""></a>
-                                    <div class="media-body">
+                                        <div class="beta-select"><i class="fa fa-shopping-cart"></i> Giỏ hàng(@if(Session::has('cart')) {{Session('cart')->totalQty}}@else Trống @endif) <i class="fa fa-chevron-down"></i></div>
+                                        <div class="beta-dropdown cart-body">
 
 
-                                        <span class="cart-item-title">{{$product['item']['name']}}</span>
-
-                                        <span class="cart-item-amount">{{$product['qty']}}*<span>{{$product['item']['unit_price']}}</span></span>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
+                                            @foreach($product_cart as $product)
+                                            <div class="cart-item">
+                                                <div class="media">
+                                                    <a class="pull-left" href="#"><img src="source/image/dienthoai/{{$product['item']['image']}}" alt=""></a>
+                                                    <div class="media-body">
 
 
+                                                        <span class="cart-item-title">{{$product['item']['name']}}</span>
 
-                            <div class="cart-caption">
-                                <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{Session('cart')->totalPrice}}</span></div>
-                                <div class="clearfix"></div>
+                                                        <span class="cart-item-amount">{{$product['qty']}}*<span>{{$product['item']['unit_price']}}</span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @endforeach
 
-                                <div class="center">
-                                    <div class="space10">&nbsp;</div>
-                                    <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div> <!-- .cart -->
 
+                                            <div class="cart-caption">
+                                                <div class="cart-total text-right">Tổng tiền: <span class="cart-total-value">{{Session('cart')->totalPrice}}</span></div>
+                                                <div class="clearfix"></div>
+
+                                                <div class="center">
+                                                    <div class="space10">&nbsp;</div>
+                                                    <a href="checkout.html" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div> <!-- .cart -->
                     @endif
                 </div>
             </div>
@@ -64,7 +63,7 @@
             <nav class="main-menu" >
                 <ul class="l-inline ov">
                 <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
-                <li style="width:150px;"><a href="#">Sản phẩm</a>
+                <li style="width:150px;"><a href="{{ route('trangchu') }}">Sản phẩm</a>
                         <ul class="sub-menu">
                             @foreach($loai_sp as $loai)
                         <li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>
@@ -73,6 +72,7 @@
                     </li>
                 <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
                 <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
+                <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
 
                 {{-- ---------try------- --}}
                     <!-- Authentication Links -->
@@ -101,12 +101,6 @@
                         </li>
                     @endguest
                 {{-- ------end try---------- --}}
-
-                {{-- ------------ đăng ký, đăng nhập -------------------------------------------------------------------------------------------------------------------------- --}}
-                {{-- <li><a href="{{ route('register') }}">Đăng kí</a></li>
-                <li><a href="{{ route('login') }}">Đăng nhập</a></li> --}}
-                {{-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
-                <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
 
                 </ul>
                 <div class="clearfix"></div>

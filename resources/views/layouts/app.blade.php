@@ -38,7 +38,7 @@
          .height1{
             display: block;
             height: 90px;
-         } 
+         }
          .height2{
             display: block;
             height: 100px;

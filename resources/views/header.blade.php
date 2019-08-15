@@ -1,6 +1,6 @@
 <div id="header">
 
-    <div class="header-body"  style="background-color:#CCFFFF">
+    <div class="header-body"  style="background-color:#00FFFF">
         <div class="container beta-relative">
             <div class="pull-left" >
                 <a href="{{ route('trangchu') }}" id="logo"><img src="source/image/logo.png" width="300px" height="100px" alt=""></a>
@@ -57,14 +57,14 @@
             <div class="clearfix"></div>
         </div> <!-- .container -->
     </div> <!-- .header-body -->
-    <div class="header-bottom" style="background-color: #0277b8;">
-        <div class="container">
-            <a class="visible-xs beta-menu-toggle pull-right" href="#"><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
+    <div class="header-bottom" style="background-color:#82FA58;">
+        <div class="container" style="width:1300px;">
+            <a class="visible-xs beta-menu-toggle pull-right" href="#" ><span class='beta-menu-toggle-text'>Menu</span> <i class="fa fa-bars"></i></a>
             <div class="visible-xs clearfix"></div>
-            <nav class="main-menu">
+            <nav class="main-menu" >
                 <ul class="l-inline ov">
-                <li><a href="{{route('trangchu')}}">Trang chủ</a></li>
-                    <li><a href="#">Sản phẩm</a>
+                <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
+                <li style="width:150px;"><a href="#">Sản phẩm</a>
                         <ul class="sub-menu">
                             @foreach($loai_sp as $loai)
                         <li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>
@@ -85,7 +85,7 @@
                                 {{-- -------------------- ẩn đăng ký , đăng nhập nếu đã có -------------------------------- --}}
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-                            <ul class="sub-menu"> 
+                            <ul class="sub-menu">
                                 <li>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
@@ -101,12 +101,18 @@
                         </li>
                     @endguest
                 {{-- ------end try---------- --}}
- 
+
                 {{-- ------------ đăng ký, đăng nhập -------------------------------------------------------------------------------------------------------------------------- --}}
                 {{-- <li><a href="{{ route('register') }}">Đăng kí</a></li>
                 <li><a href="{{ route('login') }}">Đăng nhập</a></li> --}}
                 {{-- ---------------------------------------------------------------------------------------------------------------------------------------------------------- --}}
-                <li><a href="#">Giỏ hàng</a></li>
+
+
+                <li style="width:150px;"><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
+                <li style="width:150px;"><a href="{{route('lienhe')}}">Liên hệ</a></li>
+                <li style="width:150px;"><a href="{{route('dangki')}}">Đăng kí</a></li>
+                <li style="width:150px;"><a href="{{route('dangnhap')}}">Đăng nhập</a></li>
+                <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
 
                 </ul>
                 <div class="clearfix"></div>

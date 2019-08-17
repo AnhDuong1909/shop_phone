@@ -6,6 +6,8 @@ use App\Slides;
 use App\Product;
 use App\ProductType;
 use App\Cart;
+use App\Customer;
+use App\Bill;
 use Session;
 
 use Illuminate\Http\Request;
@@ -59,5 +61,50 @@ class Pagecontroller extends Controller
      public function getsigup(){
         return view('page.dangki');
      }
+     public function getDelItemcart($id){
+         $oldCart=Session::has('cart')?Session::get('cart'):null;
+         $cart=new Cart($oldCart);
+         $cart ->removeItem($id);
+         if(count($cart->items)>0){
+            Session::put('cart',$cart);
+         }else{
+             Session::forget('cart');
+         }
+
+         return redirect()->back();
+
+     }
+     public function getCheckout(){
+         if(Session::has('cart')){
+             $oldCart=Session::get('cart');
+             $cart=new Cart($oldCart);
+             return view('page.dathang',['product_cart'=>$cart->items,'totalPrice'=>$cart->totalPrice,'totalQty'=>$cart->totalQty]);
+         }
+         else{
+            return view('page.dathang');
+         }
+
+     }
+     public function getpostCheckout( Request $req){
+         $cart=Session::get('cart');
+         $customer=new Customer;
+         $customer ->name=$req->name;
+         $customer ->gender=$req->gender;
+         $customer ->email=$req->email;
+         $customer ->adress=$req->adress;
+         $customer ->phone_number=$req->phone;
+         $customer ->note=$req->notes;
+         $customer->save();
+         $bill=new Bill;
+         $bill->id_customer=$customer->id;
+         $bill->data_order=date('Y-m-d');
+        $bill->total=$cart->totalPrice;
+        $bill->payment=$req->payment_method;
+        $bill ->note=$req->notes;
+        $bill->save();
+        Session::forget('cart');
+        return redirect()->back()->with('thongbao','Đặt hàng thành công');
+        // return view('page.dathang');
+    }
 
 }

@@ -44,9 +44,18 @@ Route::get('mua-hang',[
     'as'=>'muahang',
    'uses'=>'PageController@getMuahang'
 ]);
-
-
-
+Route::get('del-cart/{id}',[
+    'as'=>'xoagiohang',
+   'uses'=>'PageController@getDelItemcart'
+]);
+ Route::get('dat-hang',[
+     'as'=>'dathang',
+  'uses'=>'PageController@getCheckout'
+]);
+// Route::get('dat-hang2',[
+//     'as'=>'dathang2',
+//    'uses'=>'PageController@getpostCheckout'
+// ]);
 
 
 

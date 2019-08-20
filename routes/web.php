@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
-
+use Symfony\Component\HttpFoundation\Request;
+use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,21 +61,30 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('/customer', 'CustomerController');
     Route::resource('/news', 'NewsController');
     Route::resource('/users','UsersController');
+
+    //----- delete Cookie checkAdmin ---
+    Route::get('/deleteCookie_checkAdmin', function (Request $request) {
+        \Cookie::queue(\Cookie::forget('checkAdmin'));
+        return redirect()->route('login');
+    })->name('deleteCookie_checkAdmin');
 });
-
-
 
 //facebook -------------
 Route::get('login/facebook', 'Auth\LoginController@f_redirectToProvider')->name('login.facebook');
 Route::get('login/facebook/callback', 'Auth\LoginController@f_handleProviderCallback')->name('login.facebook.callback');
-//google--------------
+//google
 Route::get('login/google', 'Auth\LoginController@g_redirectToProvider')->name('login.google');
 Route::get('login/google/callback', 'Auth\LoginController@g_handleProviderCallback')->name('login.google.callback');
 //---------------------
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');
-
-
+//---------------------
+Route::get('thongtincanhan/_edit', 'ThongtincanhanController@_edit')->name('thongtincanhan._edit');
+//------------
+Route::resource('thongtincanhan', 'ThongtincanhanController');
+//------------
+Route::fallback(function () {
+    return redirect()->route('trangchu');
+});
 
 

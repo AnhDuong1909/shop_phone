@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group">
-                <label for="exampleInputPassword1">Image </label>
+                <label for="exampleInputPassword1">Image  *</label>
                 <input type="text" name="image" class="form-control" id="exampleInputPassword1" value="{{ $l->image }}">
         </div>
       </div>

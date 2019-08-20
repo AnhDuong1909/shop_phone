@@ -53,9 +53,12 @@
     @include('header')
 
 	<div class="rev-slider">
+			<div class="height1"></div>
 
-        @yield('content')
-        </div> <!-- .container -->
+			@yield('content')
+			<div class="height1"></div>
+
+    </div> 
 
 	@include('footer')
     <!-- include js files -->

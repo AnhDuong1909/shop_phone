@@ -65,7 +65,8 @@ class LoginController extends Controller
 
                                         $user->name = $userSocial->name;
                                         $user->email = $userSocial->email;
-                                        $user->password = bcrypt('123456');
+                                        $user->password = \Hash::make('123456');
+                                        // $user->password = md5('12345678');
                                         $user->save();
 
                                         Auth::login($user);
@@ -85,10 +86,6 @@ class LoginController extends Controller
                                 {
                                     $userSocial =  Socialite::driver('google')->stateless()->user();
 
-                                    // echo $user->name; echo '<br>';
-                                    // echo $user->email; echo '<br>';
-                                    // echo $user->getName(); echo '<br>';
-                                    // // dd($user);
                                     $findUser = User::where('email',$userSocial->email)->first();
 
                                     if($findUser){
@@ -102,7 +99,8 @@ class LoginController extends Controller
 
                                         $user->name = $userSocial->name;
                                         $user->email = $userSocial->email;
-                                        $user->password = bcrypt('123456');
+                                        $user->password = \Hash::make('123456');
+                                        // $user->password = md5('12345678');
                                         $user->save();
 
                                         Auth::login($user);

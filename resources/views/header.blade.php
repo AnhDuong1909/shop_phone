@@ -63,45 +63,47 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu" >
                 <ul class="l-inline ov">
-                <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
-                <li style="width:150px;"><a href="{{ route('trangchu') }}">Sản phẩm</a>
-                        <ul class="sub-menu">
-                            @foreach($loai_sp as $loai)
-                        <li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>
-                              @endforeach
-                        </ul>
-                    </li>
-                <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
-                <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
-                <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
+                        <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
+                        <li style="width:150px;"><a href="{{ route('loaisanpham',1) }}">Sản phẩm</a>
+                                <ul class="sub-menu">
+                                    @foreach($loai_sp as $loai)
+                                <li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>
+                                    @endforeach
+                                </ul>
+                            </li>
+                        <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
+                        <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
+                        <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
 
-                {{-- ---------try------- --}}
-                    <!-- Authentication Links -->
-                    @guest
-                        <li><a href="{{ route('register') }}">Đăng kí</a></li>
-                        <li><a href="{{ route('login') }}">Đăng nhập</a></li>
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{-- -------------------- ẩn đăng ký , đăng nhập nếu đã có -------------------------------- --}}
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <ul class="sub-menu">
-                                <li>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                        {{-- ---------try------- --}}
+                            @guest
+                                <li><a href="{{ route('register') }}">Đăng ký</a></li>
+                                <li><a href="{{ route('login') }}">Đăng nhập</a></li>
+                            @else
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('thongtincanhan.index') }}">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
                                     </a>
+                                    <ul class="sub-menu">
+                                        <li><a class="dropdown-item" href="{{ route('thongtincanhan.index') }}">Thông tin cá nhân</a></li>
+                                        <li class="list-group-item"><a href="{{ route('thongtincanhan._edit') }}">Cập nhật thông tin</a></li>
+                                        <li class="list-group-item"><a href="">Danh sách đơn hàng</a></li>
+                                        <li class="list-group-item"><a href="">#</a></li>
+                                        <li class="list-group-item"><a href="">#</a></li>
+                                        <li class="list-group-item"><a href="">#</a></li>
+                                        <li class="list-group-item"><a href="">#</a></li>
+                                        <li class="list-group-item">
+                                            <a class="dropdown-item" href="{{ route('logout') }}"     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                                {{ __('Đăng xuất') }}
+                                            </a>
+                                        </li>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
+                                    </ul>
                                 </li>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        {{-- <form id="logout-form" action="{{ route('bills.index') }}" method="get" style="display: none;"> --}}
-                                        @csrf
-                                    </form>
-                            </ul>
-                        </li>
-                    @endguest
-                {{-- ------end try---------- --}}
+                            @endguest
+                        {{-- ------end try---------- --}}
 
                 </ul>
                 <div class="clearfix"></div>

@@ -39,14 +39,14 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required',
+            'name' => 'required|unique:products,name',
             'id_type' => 'required',
             'description' => '',
             'unit_price' =>'required|numeric',
             'promotion_price' => 'required|numeric',
 
             'image' => '',
-            'unit' => '',
+            'unit' => 'required|string',
             'new' => 'required',
         ]);
 
@@ -104,14 +104,14 @@ class ProductsController extends Controller
     {
 
         $this->validate($request,[
-            'name' => 'required',
+            'name' => 'required|unique:products,name,'.$id,
             'id_type' => 'required',
             'description' => '',
             'unit_price' =>'required|numeric',
             'promotion_price' => 'required|numeric',
 
             'image' => '',
-            'unit' => '',
+            'unit' => 'required|string',
             'new' => 'required',
         ]);
 

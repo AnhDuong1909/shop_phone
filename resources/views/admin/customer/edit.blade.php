@@ -19,12 +19,12 @@
 
          <div class="box-body">
                 <div class="form-group">
-                        <label >name</label>
+                        <label >name *</label>
                         <input type="text" class="form-control" value="{{ $l->name }}" name="name">
                     </div>
                     
                     <div>
-                        <label><b>Gender</b></label>
+                        <label><b>Gender *</b></label>
                         <div class="form-check">
                                   <input type="radio" class="form-check-input" name="gender" value="nam" checked>nam
                           </div>
@@ -36,7 +36,7 @@
                
                     <div class="form-group">
                         <label >email</label>
-                        <input type="email" class="form-control"value="{{ $l->email }}" name="email" readonly>
+                        <input type="email" class="form-control"value="{{ $l->email }}" name="email" >
                     </div>
             
                     <div class="form-group">

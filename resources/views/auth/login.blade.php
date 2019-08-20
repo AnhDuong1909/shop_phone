@@ -1,21 +1,19 @@
 @extends('layouts.app')
-{{-- @extends('master') --}}
 
 
 @section('content')
 <div class="container">
-<div class="height1"></div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">Đăng nhập</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <span for="email" class="col-md-4 col-form-label text-md-right">E-Mail</span>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -29,7 +27,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+                            <span for="password" class="col-md-4 col-form-label text-md-right">Mật khẩu</span>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -46,9 +44,7 @@
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input show" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }} >
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                    <span class="form-check-label ml-4" for="remember">Ghi nhớ đăng nhập </span>
                                 </div>
                             </div>
                         </div>
@@ -56,18 +52,19 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                                    {{ __('Đăng nhập') }}
                                 </button>
 
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        {{ __('Quên mật khẩu?') }}
                                     </a>
-                                @endif
+                                @endif --}}
                                 <br><br>
+                                <div class="mb-2">Hoặc đăng nhập bằng</div>
                                 <div>
-                                    <a href="{{ route('login.facebook') }}" class="btn btn-primary">Login Facebook</a>
-                                    <a href="{{ route('login.google') }}" class="btn btn-primary">Login Google</a>
+                                    <a href="{{ route('login.facebook') }}" class="btn btn-info">Facebook</a>
+                                    <a href="{{ route('login.google') }}" class="btn btn-info">Google</a>
                                 </div>
                             </div>
                         </div>
@@ -76,6 +73,5 @@
             </div>
         </div>
     </div>
-<div class="height2"></div>
 </div>
 @endsection

@@ -38,7 +38,7 @@ class ProductsTypeController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required',
+            'name' => 'required|unique:type_products,name',
             'description' => '',
             'image' => '',
         ]);
@@ -89,7 +89,7 @@ class ProductsTypeController extends Controller
     {
 
         $this->validate($request,[
-            'name' => 'required',
+            'name' => 'required|unique:type_products,name,'.$id,
             'description' => '',
             'image' => '',
         ]);

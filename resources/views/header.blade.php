@@ -3,7 +3,7 @@
     <div class="header-body"  style="background-color:#00FFFF">
         <div class="container beta-relative">
             <div class="pull-left" >
-                <a href="{{ route('trangchu') }}" id="logo"><img src="source/image/logo.png" width="300px" height="100px" alt=""></a>
+                <a href="{{route('trangchu')}}" id="logo"><img src="source/image/logo.png" width="300px" height="100px" alt=""></a>
             </div>
             <div class="pull-right beta-components space-left ov" style=" float:left">
                 <div class="space10">&nbsp;</div>

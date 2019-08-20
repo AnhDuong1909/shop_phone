@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 Route::get('index',[
     'as'=>'trangchu',
-    'uses'=>'PageController@getIndex'
+    'uses'=>'PageController@getIndex',
 ]);
 Route::get('loai-san-pham/{type}',[
         'as'=>'loaisanpham',
@@ -52,12 +52,12 @@ Route::get('del-cart/{id}',[
      'as'=>'dathang',
   'uses'=>'PageController@getCheckout'
 ]);
-// Route::get('dat-hang2',[
-//     'as'=>'dathang2',
-//    'uses'=>'PageController@getpostCheckout'
-// ]);
+ Route::post('dat-hang',[
+     'as'=>'dathang',
+    'uses'=>'PageController@getpostCheckout'
+ ]);
 
-
+ //Route::post('/sender', 'UserController@sender')->name('sender');
 
 Route::group(['prefix' => 'admin'], function () {
 

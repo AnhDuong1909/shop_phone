@@ -82,7 +82,7 @@ class Pagecontroller extends Controller
          }
          else{
             return view('page.dathang');
-         }
+          }
 
      }
      public function getpostCheckout( Request $req){
@@ -91,16 +91,20 @@ class Pagecontroller extends Controller
          $customer ->name=$req->name;
          $customer ->gender=$req->gender;
          $customer ->email=$req->email;
-         $customer ->adress=$req->adress;
+         $customer ->address=$req->address;
          $customer ->phone_number=$req->phone;
          $customer ->note=$req->notes;
          $customer->save();
          $bill=new Bill;
-         $bill->id_customer=$customer->id;
-         $bill->data_order=date('Y-m-d');
+
+         $bill->id_customer=$customer->id_customer;
+         $bill->date_order=date('Y-m-d');
         $bill->total=$cart->totalPrice;
         $bill->payment=$req->payment_method;
         $bill ->note=$req->notes;
+        $bill->id_product=$customer->id_product;
+        $bill->quantity=$customer->quantity;
+        $bill->unit_price=$customer->unit_price;
         $bill->save();
         Session::forget('cart');
         return redirect()->back()->with('thongbao','Đặt hàng thành công');

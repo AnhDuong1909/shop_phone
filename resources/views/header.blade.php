@@ -64,6 +64,7 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu" >
                 <ul class="l-inline ov">
+<<<<<<< HEAD
                         <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
                         <li style="width:150px;"><a href="{{ route('loaisanpham',1) }}">Sản phẩm</a>
                                 <ul class="sub-menu">

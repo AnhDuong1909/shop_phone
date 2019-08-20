@@ -64,7 +64,6 @@
             <div class="visible-xs clearfix"></div>
             <nav class="main-menu" >
                 <ul class="l-inline ov">
-<<<<<<< HEAD
                         <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
                         <li style="width:150px;"><a href="{{ route('loaisanpham',1) }}">Sản phẩm</a>
                                 <ul class="sub-menu">
@@ -76,19 +75,7 @@
                         <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
                         <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
                         <li style="width:150px;"><a href="#">Giỏ hàng</a></li>
-=======
-                <li style="width:150px; "><a href="{{route('trangchu')}}" >Trang chủ</a></li>
-                <li style="width:150px;"><a href="#">Sản phẩm</a>
-                        <ul class="sub-menu">
-                            @foreach($loai_sp as $loai)
-                        <li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>
-                              @endforeach
-                        </ul>
-                    </li>
-                <li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
-                <li><a href="{{route('lienhe')}}">Liên hệ</a></li>
 
->>>>>>> af1b1e7d3892117db8b9b73edc8f0f92965f0675
 
                         {{-- ---------try------- --}}
                             @guest

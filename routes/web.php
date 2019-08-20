@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 Route::get('index',[
     'as'=>'trangchu',
-    'uses'=>'PageController@getIndex'
+    'uses'=>'PageController@getIndex',
 ]);
 Route::get('loai-san-pham/{type}',[
         'as'=>'loaisanpham',
@@ -45,11 +45,20 @@ Route::get('mua-hang',[
     'as'=>'muahang',
    'uses'=>'PageController@getMuahang'
 ]);
+Route::get('del-cart/{id}',[
+    'as'=>'xoagiohang',
+   'uses'=>'PageController@getDelItemcart'
+]);
+ Route::get('dat-hang',[
+     'as'=>'dathang',
+  'uses'=>'PageController@getCheckout'
+]);
+ Route::post('dat-hang',[
+     'as'=>'dathang',
+    'uses'=>'PageController@getpostCheckout'
+ ]);
 
-
-
-
-
+ //Route::post('/sender', 'UserController@sender')->name('sender');
 
 Route::group(['prefix' => 'admin'], function () {
 
